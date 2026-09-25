@@ -2,11 +2,11 @@
   "urls": [
     [
       "micropython_shtc3/__init__.py",
-      "github:jposada202020/MicroPython_SHTC3/micropython_shtc3/__init__.py"
+      "github:mattytrentini/MicroPython_SHTC3/micropython_shtc3/__init__.py"
     ],
     [
       "micropython_shtc3/shtc3.py",
-      "github:jposada202020/MicroPython_SHTC3/micropython_shtc3/shtc3.py"
+      "github:mattytrentini/MicroPython_SHTC3/micropython_shtc3/shtc3.py"
     ]
   ],
   "version": "1"

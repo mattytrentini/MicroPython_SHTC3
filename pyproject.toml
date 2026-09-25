@@ -17,7 +17,8 @@ readme = "README.rst"
 authors = [
     {name = "JDM", email = "xxyx@mailmeto.mozmail.com"}
 ]
-urls = {Homepage = "https://github.com/jposada202020/MicroPython_SHTC3"}
+maintainers = [{name = "Matt Trentini"}]
+urls = {Homepage = "https://github.com/mattytrentini/MicroPython_SHTC3", Original = "https://github.com/jposada202020/MicroPython_SHTC3"}
 keywords = [
     "sensor",
     "micropython",

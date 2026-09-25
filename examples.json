@@ -2,11 +2,11 @@
   "urls": [
     [
       "micropython_shtc3/examples/shtc3_power_mode.py",
-      "github:jposada202020/MicroPython_SHTC3/examples/shtc3_power_mode.py"
+      "github:mattytrentini/MicroPython_SHTC3/examples/shtc3_power_mode.py"
     ],
     [
       "micropython_shtc3/examples/shtc3_simpletest.py",
-      "github:jposada202020/MicroPython_SHTC3/examples/shtc3_simpletest.py"
+      "github:mattytrentini/MicroPython_SHTC3/examples/shtc3_simpletest.py"
     ]
   ],
   "version": "1"

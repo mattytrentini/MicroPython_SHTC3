@@ -24,4 +24,4 @@ Table of Contents
 .. toctree::
     :caption: Other Links
 
-    Download from GitHub <https://github.com/jposada202020/MicroPython_SHTC3/releases/latest>
+    Source on GitHub <https://github.com/mattytrentini/MicroPython_SHTC3>

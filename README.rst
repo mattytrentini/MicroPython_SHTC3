@@ -1,14 +1,10 @@
-⛔️ DEPRECATED
-===============
+MicroPython SHTC3 Driver
+=======================
 
-This repository is no longer supported, please consider using alternatives.
-
-.. image:: http://unmaintained.tech/badge.svg
-  :target: http://unmaintained.tech
-  :alt: No Maintenance Intended
-
-MicroPython Driver for the Sensirion SHTC3 Temperature and Humidity Sensor
-
+A MicroPython driver for the Sensirion SHTC3 temperature and humidity sensor.
+This maintained fork is based on the `original driver
+<https://github.com/jposada202020/MicroPython_SHTC3>`_ by Jose D. Montoya
+and Bryan Siepert. The original copyright and MIT license are preserved.
 
 Installing with mip
 ====================
@@ -16,13 +12,13 @@ To install using mpremote
 
 .. code-block:: shell
 
-    mpremote mip install github:jposada202020/MicroPython_SHTC3
+    mpremote mip install github:mattytrentini/MicroPython_SHTC3
 
 To install directly using a WIFI capable board
 
 .. code-block:: shell
 
-    mip.install("github:jposada202020/MicroPython_SHTC3")
+    mip.install("github:mattytrentini/MicroPython_SHTC3")
 
 
 Installing Library Examples
@@ -32,47 +28,30 @@ If you want to install library examples:
 
 .. code-block:: shell
 
-    mpremote mip install github:jposada202020/MicroPython_SHTC3/examples.json
+    mpremote mip install github:mattytrentini/MicroPython_SHTC3/examples.json
 
 To install directly using a WIFI capable board
 
 .. code-block:: shell
 
-    mip.install("github:jposada202020/MicroPython_SHTC3/examples.json")
-
-
-Installing from PyPI
-=====================
-
-On supported GNU/Linux systems like the Raspberry Pi, you can install the driver locally `from
-PyPI <https://pypi.org/project/micropython-shtc3/>`_.
-To install for current user:
-
-.. code-block:: shell
-
-    pip3 install micropython-shtc3
-
-To install system-wide (this may be required in some cases):
-
-.. code-block:: shell
-
-    sudo pip3 install micropython-shtc3
-
-To install in a virtual environment in your current project:
-
-.. code-block:: shell
-
-    mkdir project-name && cd project-name
-    python3 -m venv .venv
-    source .env/bin/activate
-    pip3 install micropython-shtc3
+    mip.install("github:mattytrentini/MicroPython_SHTC3/examples.json")
 
 
 Usage Example
 =============
 
-Take a look at the examples directory
+On a board with I2C bus 0 configured for the sensor, including the Waveshare
+ESP32-S3-RLCD-4.2:
 
-Documentation
-=============
-API documentation for this library can be found on `Read the Docs <https://micropython-shtc3.readthedocs.io/en/latest/>`_.
+.. code-block:: python
+
+    from machine import I2C
+    from micropython_shtc3.shtc3 import SHTC3
+
+    sensor = SHTC3(I2C(0))
+    temperature, relative_humidity = sensor.measurements
+    print(temperature, relative_humidity)
+
+Use the I2C bus and pins appropriate for other boards. Measurements wake the
+sensor and return it to sleep. See ``examples/`` for power-mode selection and
+``docs/api.rst`` for the API reference.

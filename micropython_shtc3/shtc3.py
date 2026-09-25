@@ -24,7 +24,7 @@ except ImportError:
 
 
 __version__ = "0.0.0+auto.0"
-__repo__ = "https://github.com/jposada202020/MicroPython_SHTC3.git"
+__repo__ = "https://github.com/mattytrentini/MicroPython_SHTC3.git"
 
 
 _DEVICE_ID = const(0xEFC8).to_bytes(2, "big")
@@ -77,11 +77,15 @@ class SHTC3:
         self._i2c = i2c
         self._address = address
 
+        # The ID command is not accepted while the sensor is asleep.
+        self._i2c.writeto(self._address, WAKEUP.to_bytes(2, "big"), False)
+        time.sleep(0.001)
+
         if self._get_device_id() != 0x87:
             raise RuntimeError("Failed to find SHTC3")
 
         self._time_operation = None
-        self.operation_mode = WAKEUP
+        self._operation_mode = WAKEUP
         self.power_mode = NORMAL
 
     @property
@@ -129,8 +133,6 @@ class SHTC3:
         if value not in power_mode_values:
             raise ValueError("Value must be a valid power_mode setting")
         self._power_mode = value
-        self._i2c.writeto(self._address, value.to_bytes(2, "big"), False)
-        time.sleep(0.001)
         if value == LOW_POWER:
             self._time_operation = 0.001
         else:

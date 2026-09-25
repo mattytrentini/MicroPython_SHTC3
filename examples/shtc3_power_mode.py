@@ -9,15 +9,9 @@ from micropython_shtc3 import shtc3
 i2c = I2C(1, sda=Pin(2), scl=Pin(3))  # Correct I2C pins for RP2040
 sht = shtc3.SHTC3(i2c)
 
-sht.power_mode = shtc3.NORMAL
-
-# After running this example you might need to power-off and on
-# the sensor. If you try to use the sensor afterward you might get
-# and EIO error
-
 while True:
     for power_mode in shtc3.power_mode_values:
-        print("Current Operation mode setting: ", sht.power_mode)
+        print("Current power mode setting: ", sht.power_mode)
         for _ in range(10):
             temp = sht.temperature
             print(f"Temperature: {temp:0.1f}°C")

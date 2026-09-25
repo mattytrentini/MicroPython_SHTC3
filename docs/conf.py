@@ -87,7 +87,6 @@ pygments_style = "sphinx"
 todo_include_todos = False
 todo_emit_warnings = False
 napoleon_numpy_docstring = False
-html_baseurl = "https://micropython-shtc3.readthedocs.io/"
 rst_prolog = """
 .. role:: python(code)
    :language: python
@@ -124,16 +123,12 @@ html_theme_options = {
         },
     ],
     # Set the repo location to get a badge with stats
-    "repo_url": "https://github.com/jposada202020/MicroPython_SHTC3/",
+    "repo_url": "https://github.com/mattytrentini/MicroPython_SHTC3/",
     "repo_name": "MicroPython SHTC3",
     "social": [
         {
             "icon": "fontawesome/brands/github",
-            "link": "https://github.com/jposada202020/MicroPython_SHTC3",
-        },
-        {
-            "icon": "fontawesome/brands/python",
-            "link": "https://pypi.org/project/micropython-shtc3/",
+            "link": "https://github.com/mattytrentini/MicroPython_SHTC3",
         },
         {
             "name": "MicroPython Downloads",
